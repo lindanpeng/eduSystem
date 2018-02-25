@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?> 
+     <!DOCTYPE hibernate-configuration PUBLIC 
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!-- 正文开始 -->
+<hibernate-configuration>
+	<!--下面是数据库的基本连接信息，对一个应用来说，设置一个session-factory节点就够了，除非我们中间使用了多个数据库 -->
+	<session-factory>
+		<property name="current_session_context_class">thread</property>
+		<!--url信息 -->
+		<property name="connection.url">jdbc:mysql://localhost:3306/eduSystem?characterEncoding=GBK</property>
+		<!--数据库方言信息 -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!--用户名 -->
+		<property name="connection.username">root</property>
+		<!--密码 -->
+		<property name="connection.password">123456</property>
+		<!--数据库驱动信息 -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<!--指定Hibernate映射文件路径 -->
+		<mapping class="beans.Student" />
+		<mapping class="beans.Teacher" />
+		<mapping class="beans.User" />
+		<mapping class="beans.Course" />
+		<mapping class="beans.Class" />
+		<mapping class="beans.Classroom" />
+		<mapping class="beans.SelectCourse" />
+		<mapping class="beans.College" />
+		<mapping class="beans.Day" />
+		<mapping class="beans.Time" />
+		<mapping class="beans.ClassTime"/>
+		<mapping class="beans.Content"/>
+	</session-factory>
+</hibernate-configuration> 
